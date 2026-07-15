@@ -6,3 +6,7 @@ start_date = datetime(2025,7,15)
 end_date = datetime(2026,7,15)
 df_eth = yf.download('ETH-USD', start_date, end_date, interval='1d')
 
+def EMA(history, time):
+    history['ema'] = history['Close'].ewm(span=time, adjust=False).mean()
+    return history
+
