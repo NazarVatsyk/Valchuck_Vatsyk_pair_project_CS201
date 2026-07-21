@@ -64,7 +64,7 @@ def plot_graph(data, long_period, short_period, average_type):
     plt.show()
 
 data = download_yfinance("ETH-USD", start_date=datetime(2025,7,15), end_date=datetime(2026,7,15))
-data = backtest(data, 50,20,sma)
+data = backtest(data, 21,9,ema)
 profit = profit_and_loss(data)
 print(profit)
-plot_graph(data, 50, 20, sma)
+plot_graph(data, 21 , 9, ema)
