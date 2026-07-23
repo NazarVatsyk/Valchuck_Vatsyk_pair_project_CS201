@@ -59,11 +59,11 @@ def plot_graph(data, long_period, short_period, average_type):
     plt.scatter(sell.index, sell["Close"], label="Sell", color="red")
     plt.title(f"Price, {funcname}_{short_period} and {funcname}_{long_period}")
     plt.xlabel("Date")
-    plt.ylabel("Price")
+    plt.ylabel("Price $")
     plt.legend()
     plt.show()
 
-data = download_yfinance("ETH-USD", start_date=datetime(2025,7,15), end_date=datetime(2026,7,15))
+data = download_yfinance("ETH-USD", start_date=datetime(2024,7,15), end_date=datetime(2026,7,15))
 data = backtest(data, 21,9,ema)
 profit = profit_and_loss(data)
 print(profit)
